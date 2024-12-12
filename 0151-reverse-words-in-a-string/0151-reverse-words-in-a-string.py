@@ -1,31 +1,37 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        start=end=0
-        stack = []
+        #creat list of words split at spaces
+        words = s.split()
         
-        while(end < len(s)):
-            #find first non-space
-            start = end
-            while start < len(s) and s[start] == " ":
-                start += 1
+        return " ".join(reversed(words))
+        
+        
+#         start=end=0
+#         stack = []
+        
+#         while(end < len(s)):
+#             #find first non-space
+#             start = end
+#             while start < len(s) and s[start] == " ":
+#                 start += 1
                 
-            #break if start exceeds or matches string length
-            if start >= len(s):
-                break
+#             #break if start exceeds or matches string length
+#             if start >= len(s):
+#                 break
                 
-            #find next space or eos
-            end = start
-            while end < len(s) and s[end] != " ":
-                end += 1
+#             #find next space or eos
+#             end = start
+#             while end < len(s) and s[end] != " ":
+#                 end += 1
             
-            #add word to stack
-            stack.append(s[start:end])
+#             #add word to stack
+#             stack.append(s[start:end])
           
-        #empty stack into string
-        result = ""
-        while stack:
-            result += stack.pop()
-            if stack:
-                result += " "
+#         #empty stack into string
+#         result = ""
+#         while stack:
+#             result += stack.pop()
+#             if stack:
+#                 result += " "
             
-        return result
+#         return result
